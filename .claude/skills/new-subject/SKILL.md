@@ -24,6 +24,8 @@ so the subject has its own history.
 5. **Environment & tools** — what you use or want to use. For technical subjects, check what is installed
    (run version commands) and note it.
 6. **Learning preferences** — theory-first or hands-on-first, preferred references, language of explanations.
+   Also explain the scaffold levels (S3 Guided → S0 Blank, `CLAUDE.md` rule 9) and agree on the project rule,
+   e.g. "project work: S2 at most, S0 from Phase N".
 7. **Software project?** — does it involve building software where requirements, architecture and design
    matter? If yes, offer the `software-project` pack.
 
@@ -32,7 +34,7 @@ Present a short proposal and adjust until the learner agrees:
 - Phases (5–12) with topics, an **honest** week estimate at their hours/week, and evidence-based exit criteria.
   Interleave theory and practice; start applying to the final project early to keep motivation.
 - How exercises are made and checked (see `.claude/skills/new-subject/templates/exercise-format.md` — pick the
-  matching style).
+  matching style), including what each scaffold level S3–S0 contains for this subject.
 - Review checklist priorities.
 - Knowledge categories (3–6).
 - Optional subject agents (e.g. a performance coach, a pronunciation coach) — only if clearly useful.

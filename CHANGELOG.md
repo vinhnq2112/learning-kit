@@ -5,7 +5,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/) · versions: [SemVer](ht
 
 ## Unreleased
 
+## 0.1.0 — 2026-10-16
+
 ### Added
+- **Scaffold levels** for practice (`CLAUDE.md` rule 9, `/exercise`): starter material with numbered `TODO`
+  steps, pseudocode and `YOU DECIDE` choices that fades S3 Guided → S2 Outline → S1 Spec → S0 Blank as the
+  learner improves. Levels per topic are tracked in `learning/progress.md`; "more help" / "less help" changes
+  them. `/review` and `reviewer` check `YOU DECIDE` answers; `/checkpoint` needs S1/S0 evidence; templates
+  describe each level per exercise style; `subject.md` gets a **Scaffolding** rule for project work.
 - "Language & writing style" rules in `CLAUDE.md`: plain words, short sentences, define terms first, one
   meaning only — for everything the mentor and agents write. `reviewer` and `architect` agents follow them;
   subject template gets a **Language** field.

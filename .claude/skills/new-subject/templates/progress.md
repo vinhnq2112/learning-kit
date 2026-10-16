@@ -14,7 +14,12 @@ _(filled by `/plan-week`)_
 - <tool — version — status>
 
 ## Completed
-_(nothing yet)_
+_(nothing yet — format: `NN-<exercise> (S2) — passed`)_
+
+## Scaffold levels
+Starter-material level per topic (`/exercise` → "Scaffold levels"). New topics start at S3.
+| Topic | Level | Last exercise | Last change |
+|---|---|---|---|
 
 ## Milestone status
 | Phase | Status | Exit criteria met |

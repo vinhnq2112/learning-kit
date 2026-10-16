@@ -58,6 +58,24 @@ nothing is lost, and a fresh session stays fast and focused.
 
 Start of each week: `/plan-week`. End of each phase: `/checkpoint`.
 
+### How much help exercises give (scaffold levels)
+Exercises come with starter material that gets smaller as you improve. The goal is that you can work from a
+blank page at the end.
+
+| Level | You get | Example (programming) |
+|---|---|---|
+| **S3 Guided** | Template + numbered `TODO` steps (what and how) + pseudocode + `YOU DECIDE` choices | `// TODO 2: free the buffer in the destructor` |
+| **S2 Outline** | Template + `TODO` goals (what only) | `// TODO: the class owns the buffer` |
+| **S1 Spec** | Requirements + checker (e.g. tests) | README + `tests/` |
+| **S0 Blank** | Requirements only — you also write the checks | README |
+
+- Every new topic starts at **S3**. After a passed exercise with explain-back 4+, the next exercise is one level
+  lower. If an exercise fails, the level goes one up.
+- `YOU DECIDE: …` marks a choice the mentor leaves to you on purpose. `/review` checks your answer.
+- Say **"more help"** or **"less help"** any time to move one level up or down.
+- `/checkpoint` needs at least one piece of work done at S1 or S0.
+- Your current level per topic is in `learning/progress.md` → "Scaffold levels".
+
 ## 4. Commands
 
 | Command | When |
@@ -65,7 +83,7 @@ Start of each week: `/plan-week`. End of each phase: `/checkpoint`.
 | `/new-subject` | Once, to set up a subject |
 | `/plan-week` | Start of each week |
 | `/lesson [topic]` | Learn the next (or a given) topic |
-| `/exercise [topic]` | Practice with a checker (tests, answer check…) |
+| `/exercise [topic]` | Practice with a checker (tests, answer check…) and starter material at your level |
 | `/review [path]` | Get feedback on your work — hints, not fixes |
 | `/quiz [n]` | Refresh what you might forget |
 | `/note` · `/note find X` · `/note review X` | Save / search / revisit your notes |
@@ -95,7 +113,7 @@ The knowledge base is plain Markdown — readable in VS Code, Obsidian or GitHub
 - **The mentor did my work for me.** Say "you broke rule 1" — it will step back to hints.
 - **I'm behind schedule / missed a week.** Normal. Tell the mentor or run `/plan-week`; `/checkpoint` can
   adjust the roadmap honestly.
-- **Too easy / too hard.** Say so — the mentor adapts. To change it permanently, edit "Current level" in `subject.md`.
+- **Too easy / too hard.** Say so — the mentor adapts. For exercises, say "less help" / "more help" (section 3). To change it permanently, edit "Current level" in `subject.md`.
 - **Back up my progress.** The folder is a git repo: commit `subject/` and `learning/` regularly.
 - **I improved the kit while learning — how do I share it?** See section 8.
 

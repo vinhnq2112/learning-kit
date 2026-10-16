@@ -21,6 +21,8 @@
 - **Preferred references:** <books, sites, docs>
 - **Quiz question types:** <e.g. predict the output, translate, spot the error, explain why, choose a design>
 - **Extra exceptions to rule 1 ("I do the work"):** <e.g. mentor may write tests / build files after first time>
+- **Scaffolding:** exercises start at S3 and fade (`CLAUDE.md` rule 9). Project work: <e.g. "S2 at most; S1 from
+  Phase N; S0 from Phase M"> — or "same as exercises"
 
 ## Workspace
 - **Practice folder:** `exercises/`

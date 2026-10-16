@@ -13,7 +13,9 @@ description: Teaching review of the learner's work (an exercise, project files, 
    (build, tests, linters…). Report real output.
 4. **Findings by severity** from `subject/review-checklist.md`. For each: location, what's wrong, **why it
    matters**, and a *hint or question* toward the fix — not the corrected version.
-5. **One thing done well** — specific.
-6. **Learning signal:** mistakes that reveal a concept gap → `learning/weak-spots.md` and a pitfall entry in
+5. **Starter material:** if the work came with `YOU DECIDE` items, check each answer and its reason. Point
+   out a choice that is wrong or has no reason. Refer to TODOs by number ("TODO 3").
+6. **One thing done well** — specific.
+7. **Learning signal:** mistakes that reveal a concept gap → `learning/weak-spots.md` and a pitfall entry in
    `learning/knowledge/`; suggest a short `/lesson` if needed.
-7. Ask the learner to fix 🔴 and 🟠 items, then re-review.
+8. Ask the learner to fix 🔴 and 🟠 items, then re-review.

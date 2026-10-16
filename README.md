@@ -1,7 +1,8 @@
 # Learning Kit
 
 A reusable Claude Code kit that turns Claude into a personal learning mentor for any subject:
-Socratic lessons, exercises with checkers, teaching reviews, spaced-repetition quizzes, an automatic
+Socratic lessons, exercises with checkers and starter material (TODOs, pseudocode) that fades as you improve,
+teaching reviews, spaced-repetition quizzes, an automatic
 knowledge base of everything you ask, and progress tracking against a roadmap.
 
 **This folder is the template.** Copy it (without `.git`) for each new subject, open `claude` in the copy,
