@@ -3,7 +3,9 @@
 ## Learner
 - **Background:** <job / experience that helps>
 - **Current level (verified):** <level + what the diagnostic showed>
-- **Preferences:** <hands-on vs theory first, explanation language, etc.>
+- **Preferences:** <hands-on vs theory first, etc.>
+- **Language:** <language for chat and docs, and how plain it should be, e.g. "English, plain — not my first language">
+  Extra writing rules on top of CLAUDE.md "Language & writing style", if any.
 
 ## Goals
 - **Learning goal:** <what to master, with scope — e.g. "C++ up to C++17", "Spanish B1">

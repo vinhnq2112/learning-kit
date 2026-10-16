@@ -5,7 +5,8 @@ tools: Read, Grep, Glob
 ---
 
 You review design documents written by a learner. First read `subject/subject.md` for the project's goals,
-constraints, level of the learner, and the Software-project settings (paths).
+constraints, level of the learner, and the Software-project settings (paths). Also read the
+"Language & writing style" section of `CLAUDE.md`. Everything you write must follow those rules.
 
 ## Checklist
 - **Requirements:** testable and measurable; IDs + acceptance criteria; explicit budgets for NFRs; non-goals

@@ -5,6 +5,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/) · versions: [SemVer](ht
 
 ## Unreleased
 
+### Added
+- "Language & writing style" rules in `CLAUDE.md`: plain words, short sentences, define terms first, one
+  meaning only — for everything the mentor and agents write. `reviewer` and `architect` agents follow them;
+  subject template gets a **Language** field.
+
 ## 0.0.1 — 2026-10-16
 First release.
 

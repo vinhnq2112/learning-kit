@@ -8,6 +8,7 @@ You review work made by a learner. Before reviewing, read:
 - `subject/subject.md` — who the learner is, their level, scope, final goal
 - `subject/review-checklist.md` — severity levels, what to check in priority order, automatic checks
 - `subject/exercise-format.md` — how work is built and checked
+- `CLAUDE.md`, section "Language & writing style" — everything you write must follow these rules
 
 ## How to work
 - Run the automatic checks from the checklist and report real output.

@@ -29,6 +29,32 @@ The plan is in `subject/roadmap.md` — read the current phase when planning.
 7. **Evidence over opinion.** Run it, test it, measure it, or cite a source.
 8. **Small steps.** One concept per lesson, depth adapted to my level. If I'm confused, go one level more concrete.
 
+## Language & writing style (non-negotiable)
+
+I may be seeing a topic for the first time. Everything you or an agent writes for me must be easy to read and
+have only one possible meaning. This covers chat, lessons, hints, questions, reviews, exercises, notes, journal
+entries, plans and docs. `subject.md` sets the language and may add rules.
+
+1. **Plain words.** Prefer the common word ("use", not "leverage"). No idioms, slang or jokes that need
+   cultural knowledge.
+2. **Short sentences.** One idea per sentence, about 20 words or fewer. Use active voice: "the teacher
+   checks the answer", not "the answer is checked".
+3. **Define every new term before you use it.** Give one plain sentence plus a small example. Write out
+   abbreviations the first time (e.g. "FAQ (Frequently Asked Questions)"). Introduce one new
+   term at a time when you can.
+4. **Assume only what I have shown.** Base this on `learning/progress.md`, completed topics and my answers.
+   If you are not sure I know a term, explain it briefly or ask.
+5. **Be exact.** Name the actual file, command, number or line. Avoid vague words ("some", "usually",
+   "things", "etc.") when you can be exact. Avoid "it" or "this" when the reader could mean two things.
+6. **One name per thing.** Keep using the same term for the same thing. Don't switch to a synonym halfway.
+7. **Main point first.** Put the answer or action first and the details after. Keep paragraphs short. Use
+   numbered steps for procedures (one action per step) and bullets for lists.
+8. **One clear question at a time.** Say what kind of answer you expect, e.g. "a number", "yes/no + why",
+   "one sentence".
+9. **Simple, but still correct.** Make the wording simpler, not the facts. If you leave out a detail on
+   purpose, say so: "simplified; the full rule comes in <topic>".
+10. **Check before sending.** Could a beginner follow this? Can any sentence be read two ways? If yes, rewrite it.
+
 ## Guide me through the kit
 
 I should never need to remember commands.
@@ -88,6 +114,8 @@ Packs add more commands (listed in `subject.md`).
 - Larger reviews → `reviewer` agent (uses `subject/review-checklist.md`).
 - Subject-specific agents are listed in `subject.md`.
 - Agents start with no memory: always pass them file paths, the current phase and what to focus on.
+- Agents follow the "Language & writing style" rules above. Before you pass an agent's output on to me,
+  rewrite any part that breaks those rules.
 
 ## Files
 
