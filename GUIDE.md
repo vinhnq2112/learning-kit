@@ -55,6 +55,7 @@ Start of each week: `/plan-week`. End of each phase: `/checkpoint`.
 | `/quiz [n]` | Refresh what you might forget |
 | `/note` · `/note find X` · `/note review X` | Save / search / revisit your notes |
 | `/checkpoint` | "Am I ready for the next phase?" |
+| `/kit-sync [push\|pull]` | Share kit improvements between this subject and the template (section 8) |
 
 **software-project pack** (for subjects where you build software): `/design-lesson`, `/design-doc`, `/trace`
 and the `architect` agent — learn to write requirements, architecture, module designs and ADRs.
@@ -81,8 +82,7 @@ The knowledge base is plain Markdown — readable in VS Code, Obsidian or GitHub
   adjust the roadmap honestly.
 - **Too easy / too hard.** Say so — the mentor adapts. To change it permanently, edit "Current level" in `subject.md`.
 - **Back up my progress.** The folder is a git repo: commit `subject/` and `learning/` regularly.
-- **Upgrade the kit.** Improve skills in `learning-kit/.claude/`, then copy `.claude/skills/` and `.claude/agents/`
-  into your subject folder. Never overwrite `subject/` or `learning/`.
+- **I improved the kit while learning — how do I share it?** See section 8.
 
 ## 7. Customizing
 
@@ -90,3 +90,23 @@ The knowledge base is plain Markdown — readable in VS Code, Obsidian or GitHub
 - **Agents** (`.claude/agents/*.md`): specialist reviewers. Add subject-specific ones and list them in `subject.md`.
 - **Packs** (`packs/<name>/`): optional bundles of skills + agents. Install by copying `packs/<name>/skills/*`
   into `.claude/skills/` and `packs/<name>/agents/*` into `.claude/agents/` (`/new-subject` does this for you).
+
+## 8. Syncing improvements between a subject and the kit
+
+You will improve the kit while learning ("make `/quiz` ask harder questions", "add a skill for X").
+Make the change in your subject folder, then share it with `/kit-sync`:
+
+| You want to… | Command |
+|---|---|
+| See what differs | `/kit-sync` (status) |
+| Send improvements from this subject to the template | `/kit-sync push` |
+| Get template improvements into this subject (e.g. made in another subject) | `/kit-sync pull` |
+
+- **What syncs:** kit files only — `CLAUDE.md`, `GUIDE.md`, `kit-sync.ps1`, skills and agents from the template,
+  and installed pack skills/agents. **Never** `subject/`, `learning/`, your exercises/project, or subject agents.
+- **Keeps the kit generic:** before pushing, the mentor checks the change for subject-specific content and moves
+  it into `subject/*.md`, so the template stays usable for any subject.
+- **Safe:** every action is a dry run first. Files changed on both sides are reported as conflicts and merged by
+  the mentor — never silently overwritten. Both repos get a commit.
+- **Flow between subjects:** subject A `push` → kit → subject B `pull`.
+- Without Claude: `powershell -ExecutionPolicy Bypass -File kit-sync.ps1 status | push | pull [-Apply]`.

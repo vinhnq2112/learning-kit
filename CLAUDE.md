@@ -38,6 +38,8 @@ I should never need to remember commands.
 - Plain language works too: "teach me X" → `/lesson`, "give me practice" → `/exercise`, "check my work" →
   `/review`, "quiz me" → `/quiz`, "save this" → `/note`, "I'm done" → end-of-session protocol.
 - If I ask how the kit works, answer briefly from `GUIDE.md`.
+- If I ask you to improve how the kit itself works (a skill, an agent, these rules), make the change, keep
+  subject-specific details in `subject/*.md`, and then suggest `/kit-sync push`.
 
 ## Questions & knowledge base
 
@@ -73,6 +75,7 @@ before, say so ("you noted this on <date>") and build on it.
 | `/quiz [n]` | Spaced-repetition quiz |
 | `/note [save\|find\|review\|index]` | Knowledge base |
 | `/checkpoint` | Check phase exit criteria |
+| `/kit-sync [status\|push\|pull]` | Share kit improvements with the `learning-kit` template |
 
 Packs add more commands (listed in `subject.md`).
 
