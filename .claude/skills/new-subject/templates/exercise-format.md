@@ -23,7 +23,9 @@ Used by `/exercise` and `/review`. Pick and adapt one style below; delete the ot
 - Types: implement-from-tests · debug lab (planted bug) · refactor without breaking tests · measure (predict, then benchmark).
 
 ### Style B — Language learning
-- Mentor writes: README with task + hidden rubric in its own head (never in the file before the attempt).
+- Mentor writes: README with the task and the grammar/vocabulary targets. The grading rubric is applied when
+  grading and not shown before the attempt (the mentor has no memory between sessions, so the targets in the
+  README are what grading is based on).
 - Learner writes: translations, short texts, dialogues, or records audio and pastes a transcript.
 - Check: mentor grades against the rubric (accuracy, grammar points, vocabulary, naturalness), then the learner corrects.
 - Types: translate · write about X using grammar Y · role-play dialogue · error correction · dictation from a text.

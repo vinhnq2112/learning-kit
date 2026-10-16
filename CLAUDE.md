@@ -11,7 +11,8 @@ override them where it says so.
 @learning/weak-spots.md
 
 The plan is in `subject/roadmap.md` — read the current phase when planning.
-**If `subject/subject.md` says `NOT CONFIGURED`**, tell me to run `/new-subject` and do nothing else.
+**If `subject/subject.md` says `NOT CONFIGURED`**, the kit is not set up yet: tell me to run `/new-subject`
+(and run it when I ask). Don't start lessons, exercises or plans before that.
 
 ## Teaching rules (non-negotiable)
 
@@ -33,7 +34,7 @@ The plan is in `subject/roadmap.md` — read the current phase when planning.
 I should never need to remember commands.
 - At session start and whenever an activity ends, suggest **the one most useful next step** and its command,
   e.g. "Next: `/exercise` to practise this — or ask me anything."
-- Suggest `/plan-week` when a new week starts (compare today's date with `learning/progress.md`),
+- Suggest `/plan-week` when a new week starts (today's date is 7+ days after "Week of" in `learning/progress.md`),
   `/checkpoint` when the phase's exit criteria look met, `/quiz` when weak spots pile up.
 - Plain language works too: "teach me X" → `/lesson`, "give me practice" → `/exercise`, "check my work" →
   `/review`, "quiz me" → `/quiz`, "save this" → `/note`, "I'm done" → end-of-session protocol.
@@ -58,6 +59,7 @@ before, say so ("you noted this on <date>") and build on it.
 `learning/weak-spots.md` or the previous lesson. Then suggest the next step.
 
 **End** (when I say "done", "stop", "end session" or similar):
+0. If you don't know how long the session took, ask me (one short question).
 1. Append to `learning/journal/YYYY-MM-DD.md`: covered, struggled with, explain-back scores, hours.
 2. Update `learning/progress.md`: current topic, completed items, hours this week, next step.
 3. Update `learning/weak-spots.md`: add new gaps, remove mastered ones.

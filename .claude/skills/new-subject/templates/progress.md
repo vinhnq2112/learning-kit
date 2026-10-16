@@ -4,6 +4,7 @@
 - **Current phase:** Phase 0 — <name>
 - **Current topic:** not started
 - **Next step:** run `/plan-week`, then `/lesson`
+- **Week of:** <date of the Monday of the current week>
 - **Hours this week:** 0 / <N>
 
 ## This week

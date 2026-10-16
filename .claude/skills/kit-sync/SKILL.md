@@ -10,7 +10,7 @@ Default: `status`. The script is `kit-sync.ps1` in the subject root; run it as
 (default kit location: `../learning-kit`).
 
 ## Ownership
-- **Kit-owned (synced):** `CLAUDE.md`, `GUIDE.md`, `kit-sync.ps1`, all template skills and agents, and installed
+- **Kit-owned (synced):** `VERSION`, `CLAUDE.md`, `GUIDE.md`, `kit-sync.ps1`, all template skills and agents, and installed
   pack skills/agents (they map to `packs/<pack>/…` in the kit).
 - **Subject-owned (never synced):** `subject/`, `learning/`, practice and project folders, subject agents, `README.md`.
 - **Golden rule:** kit files stay subject-independent. Anything specific to this subject (language, tools,
@@ -28,7 +28,8 @@ Run `status` and explain each non-`same` row in plain words:
    generic rule in the kit file + specifics in `subject/subject.md` / `exercise-format.md` / `review-checklist.md`.
    Apply the split in the subject after the learner agrees, then re-run the dry run.
 3. Ask for confirmation, then run `push -Apply`.
-4. Commit both repos: kit `kit: <summary> (from <subject folder name>)`; subject `Sync kit: <summary>`
+4. Add a line under "Unreleased" in the kit's `CHANGELOG.md` (kit-only file, not synced).
+5. Commit both repos: kit `kit: <summary> (from <subject folder name>)`; subject `Sync kit: <summary>`
    (includes `.kit/sync-state.json`).
 
 ## pull (kit → subject)

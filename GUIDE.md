@@ -8,12 +8,17 @@ and tracks your progress against a roadmap.
 
 ## 1. Start a new subject (once, ~20 min)
 
+Copy the template **without its `.git` folder** (the subject gets its own git history), next to `learning-kit`:
+
 ```
-copy the folder:   learning-kit  →  my-new-subject      (keep learning-kit untouched as the template)
+cd C:\Users\Admin\Desktop\ai
+robocopy learning-kit my-new-subject /E /XD .git .kit
 cd my-new-subject
 claude
 /new-subject
 ```
+
+Keep `learning-kit` next to your subject folders — `/kit-sync` looks for it at `../learning-kit`.
 
 The mentor interviews you: what you want to learn, your current level (with a few check questions),
 your final goal, hours per week, tools. It then writes your `subject/` files and a roadmap.

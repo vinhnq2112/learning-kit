@@ -3,7 +3,7 @@
   Sync kit-owned files between a subject folder and the learning-kit template.
 
 .DESCRIPTION
-  Kit-owned files: CLAUDE.md, GUIDE.md, kit-sync.ps1, every skill/agent of the template's .claude/,
+  Kit-owned files: VERSION, CLAUDE.md, GUIDE.md, kit-sync.ps1, every skill/agent of the template's .claude/,
   and the pack skills/agents installed in this subject. Subject-owned files (subject/, learning/,
   practice/project folders, subject agents, README.md) are never touched.
 
@@ -35,8 +35,13 @@ if (Test-Path $StateFile) {
     (Get-Content $StateFile -Raw | ConvertFrom-Json).PSObject.Properties | ForEach-Object { $state[$_.Name] = $_.Value }
 }
 
+# Hash with line endings normalized, so CRLF/LF conversions by git don't look like changes
+$sha = [System.Security.Cryptography.SHA256]::Create()
 function Get-Hash($path) {
-    if (Test-Path -LiteralPath $path -PathType Leaf) { (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash } else { $null }
+    if (-not (Test-Path -LiteralPath $path -PathType Leaf)) { return $null }
+    $bytes = [System.IO.File]::ReadAllBytes((Resolve-Path -LiteralPath $path).Path)
+    $text = [System.Text.Encoding]::UTF8.GetString($bytes) -replace "`r`n", "`n"
+    [System.BitConverter]::ToString($sha.ComputeHash([System.Text.Encoding]::UTF8.GetBytes($text))) -replace '-', ''
 }
 
 function Get-RelFiles($root, $dir) {
@@ -56,7 +61,7 @@ function Add-Dir($sDir, $kDir) {
     foreach ($f in $files) { Add-Pair "$sDir/$f" "$kDir/$f" }
 }
 
-foreach ($f in 'CLAUDE.md', 'GUIDE.md', 'kit-sync.ps1') { Add-Pair $f $f }
+foreach ($f in 'VERSION', 'CLAUDE.md', 'GUIDE.md', 'kit-sync.ps1') { Add-Pair $f $f }
 Get-ChildItem (Join-Path $Kit '.claude\skills') -Directory | ForEach-Object {
     Add-Dir ".claude/skills/$($_.Name)" ".claude/skills/$($_.Name)"
 }
@@ -104,8 +109,9 @@ $rows = foreach ($p in $pairs) {
 }
 
 $changed = @($rows | Where-Object Status -ne 'same')
-Write-Host "Subject: $Subject"
-Write-Host "Kit:     $Kit"
+function Get-Version($root) { $v = Join-Path $root 'VERSION'; if (Test-Path $v) { (Get-Content $v -Raw).Trim() } else { '?' } }
+Write-Host "Subject: $Subject (kit version $(Get-Version $Subject))"
+Write-Host "Kit:     $Kit (version $(Get-Version $Kit))"
 if ($changed.Count -eq 0) { Write-Host 'In sync: all kit-owned files are identical.' }
 else { $changed | Sort-Object Status, Subject | Format-Table Status, Subject, Kit -AutoSize | Out-String -Width 220 | Write-Host }
 

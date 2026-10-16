@@ -10,6 +10,10 @@ If `subject/subject.md` is already configured (does not contain `NOT CONFIGURED`
 subject. Recommend copying the `learning-kit` template to a new folder instead. Continue only if the learner
 explicitly confirms; never touch `learning/journal/` or `learning/knowledge/` of an existing subject.
 
+If this folder is a git repo whose history is the template's (e.g. `git log` shows "Add learning kit template")
+— the folder was copied together with the template's `.git` — offer to remove `.git` and start a fresh repo,
+so the subject has its own history.
+
 ## 1. Interview (1–2 questions at a time, conversational)
 1. **What** do you want to learn, and **why** (job, project, curiosity)?
 2. **Current level** — ask for a self-rating, then verify with 2–4 short diagnostic questions of rising difficulty.
@@ -27,13 +31,15 @@ explicitly confirms; never touch `learning/journal/` or `learning/knowledge/` of
 Present a short proposal and adjust until the learner agrees:
 - Phases (5–12) with topics, an **honest** week estimate at their hours/week, and evidence-based exit criteria.
   Interleave theory and practice; start applying to the final project early to keep motivation.
-- How exercises are made and checked (see `templates/exercise-format.md` — pick the matching style).
+- How exercises are made and checked (see `.claude/skills/new-subject/templates/exercise-format.md` — pick the
+  matching style).
 - Review checklist priorities.
 - Knowledge categories (3–6).
 - Optional subject agents (e.g. a performance coach, a pronunciation coach) — only if clearly useful.
 
 ## 3. Write the files
-Fill these from `templates/` (in this skill's folder), replacing every placeholder:
+Fill these from `.claude/skills/new-subject/templates/`, replacing every `<placeholder>` and deleting
+template comments and options that don't apply:
 - `subject/subject.md` ← `templates/subject.md`
 - `subject/roadmap.md` ← `templates/roadmap.md`
 - `subject/exercise-format.md` ← `templates/exercise-format.md`
@@ -48,6 +54,7 @@ Create the practice and project folders named in `subject.md`.
   them in `subject.md`.
 
 ## 5. Finish
-- If the folder is not a git repo, run `git init`.
+- If the folder is not a git repo, run `git init`, then make a first commit after the learner agrees.
+- Run `/kit-sync status` once so the sync state starts clean.
 - Summarize what was created in a short table.
 - Tell the learner: **restart `claude`** so new skills and agents load, then say "hi" and run `/plan-week`.
