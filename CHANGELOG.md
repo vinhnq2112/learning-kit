@@ -20,4 +20,8 @@ First release.
   `/design-doc`, `/trace`, `architect` agent.
 - `kit-sync.ps1`: status / push / pull between a subject and the template, dry run by default, last-sync hash
   state with conflict detection, line-ending-insensitive comparison.
+- Kit location: `../learning-kit` if present, otherwise an automatically managed clone in `~/.learning-kit/`
+  from the URL in `kit.json` — subjects work on any machine with only their own repo cloned.
+- `kit-sync.ps1 check`: newer kit release notice at session start.
+- GitHub template-repository workflow for creating new subjects.
 - `GUIDE.md` user guide.

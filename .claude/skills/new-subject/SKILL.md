@@ -46,6 +46,9 @@ template comments and options that don't apply:
 - `subject/review-checklist.md` ← `templates/review-checklist.md`
 - `learning/progress.md` ← `templates/progress.md`
 Create the practice and project folders named in `subject.md`.
+Replace `README.md` (the template's) with a short subject README: what is learned, links to `GUIDE.md`,
+`subject/subject.md`, `subject/roadmap.md`, `learning/progress.md`, and how to start (`claude` → "hi").
+Delete `CHANGELOG.md` (kit-only) from the subject.
 
 ## 4. Packs and agents
 - For each chosen pack: copy `packs/<pack>/skills/*` → `.claude/skills/` and `packs/<pack>/agents/*` →

@@ -8,17 +8,27 @@ and tracks your progress against a roadmap.
 
 ## 1. Start a new subject (once, ~20 min)
 
-Copy the template **without its `.git` folder** (the subject gets its own git history), next to `learning-kit`:
+**Option 1 — on GitHub (recommended):** open the `learning-kit` repo → **Use this template** → create a new
+(private) repo, e.g. `japanese-n4`. Then:
 
 ```
-cd C:\Users\Admin\Desktop\ai
+git clone https://github.com/<you>/japanese-n4
+cd japanese-n4
+claude
+/new-subject
+```
+
+**Option 2 — local copy** (without the template's `.git`, so the subject gets its own history):
+
+```
 robocopy learning-kit my-new-subject /E /XD .git .kit
 cd my-new-subject
 claude
 /new-subject
 ```
 
-Keep `learning-kit` next to your subject folders — `/kit-sync` looks for it at `../learning-kit`.
+You don't need the kit folder next to your subject: `/kit-sync` uses `../learning-kit` if it exists, otherwise it
+clones the kit itself (URL in `kit.json`) into `~/.learning-kit/`.
 
 The mentor interviews you: what you want to learn, your current level (with a few check questions),
 your final goal, hours per week, tools. It then writes your `subject/` files and a roadmap.
@@ -113,5 +123,11 @@ Make the change in your subject folder, then share it with `/kit-sync`:
   it into `subject/*.md`, so the template stays usable for any subject.
 - **Safe:** every action is a dry run first. Files changed on both sides are reported as conflicts and merged by
   the mentor — never silently overwritten. Both repos get a commit.
-- **Flow between subjects:** subject A `push` → kit → subject B `pull`.
+- **Flow between subjects:** subject A `push` → kit (GitHub) → subject B `pull`.
+- **Where the kit is:** `../learning-kit` if you have it there (edit it directly if you like); otherwise
+  `/kit-sync` keeps its own clone in `~/.learning-kit/learning-kit`, updated from GitHub. On a new machine just
+  clone your subject — syncing works right away.
+- **Update notice:** at session start the mentor checks GitHub for a newer kit release (`kit-sync.ps1 check`) and
+  tells you in one line.
+- **Releases:** say "release the kit" — the mentor bumps `VERSION`, updates `CHANGELOG.md`, tags `vX.Y.Z` and pushes.
 - Without Claude: `powershell -ExecutionPolicy Bypass -File kit-sync.ps1 status | push | pull [-Apply]`.

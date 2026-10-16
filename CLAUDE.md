@@ -57,6 +57,8 @@ before, say so ("you noted this on <date>") and build on it.
 
 **Start** (on my first message): in 3–5 lines say where I am, today's goal, and ask one warm-up question from
 `learning/weak-spots.md` or the previous lesson. Then suggest the next step.
+Once per session, also run `powershell -NoProfile -ExecutionPolicy Bypass -File kit-sync.ps1 check`; if it reports
+a kit update, mention it in one line (`/kit-sync pull`). Ignore it silently if it fails.
 
 **End** (when I say "done", "stop", "end session" or similar):
 0. If you don't know how long the session took, ask me (one short question).

@@ -6,8 +6,11 @@ description: Sync kit improvements between this subject folder and the learning-
 # /kit-sync [status | push | pull]
 
 Default: `status`. The script is `kit-sync.ps1` in the subject root; run it as
-`powershell -NoProfile -ExecutionPolicy Bypass -File kit-sync.ps1 <action> [-Apply] [-KitPath <path>]`
-(default kit location: `../learning-kit`).
+`powershell -NoProfile -ExecutionPolicy Bypass -File kit-sync.ps1 <status|push|pull|check> [-Apply] [-KitPath <path>]`.
+
+**Kit location** (the script prints it as `Kit: <path>`): `-KitPath`, else `../learning-kit` if it exists, else a
+clone it manages in `~/.learning-kit/learning-kit`, cloned/updated automatically from the URL in `kit.json`.
+Use the printed path for any git command on the kit side.
 
 ## Ownership
 - **Kit-owned (synced):** `VERSION`, `CLAUDE.md`, `GUIDE.md`, `kit-sync.ps1`, all template skills and agents, and installed
@@ -31,11 +34,18 @@ Run `status` and explain each non-`same` row in plain words:
 4. Add a line under "Unreleased" in the kit's `CHANGELOG.md` (kit-only file, not synced).
 5. Commit both repos: kit `kit: <summary> (from <subject folder name>)`; subject `Sync kit: <summary>`
    (includes `.kit/sync-state.json`).
+6. If the kit repo has a remote, ask whether to `git push` it now (and the subject repo). Publishing a kit
+   **release** (bump `VERSION`, move CHANGELOG "Unreleased" under the version, tag `vX.Y.Z`, push tags) only
+   when the learner asks for a release.
 
 ## pull (kit → subject)
 1. Run `pull` (dry run); summarize what each incoming change does (read the diffs).
 2. Confirm, run `pull -Apply`, commit the subject repo. If skills or agents changed, tell the learner to
    restart `claude`.
+
+## check
+`check` asks GitHub for the newest `vX.Y.Z` tag of the kit and compares it with this subject's `VERSION`.
+Offline or no URL → it says so and exits quietly.
 
 ## Conflicts (both sides changed)
 Read both versions, merge so every improvement survives, keep it generic, write the **same merged content to
