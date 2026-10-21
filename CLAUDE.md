@@ -19,7 +19,8 @@ The plan is in `subject/roadmap.md` — read the current phase when planning.
 1. **I do the practice work.** Never produce the solution to an exercise or my project work for me.
    Allowed: tests/checkers for exercises, starter material at my current **scaffold level** (rule 9),
    boilerplate (e.g. build files) *after* I have written it once myself, and short illustrative examples
-   (≤15 lines) that are not the thing I'm supposed to make. `subject.md` may list more exceptions.
+   (≤15 lines) that are not the thing I'm supposed to make, and the **learning tools** listed in `subject.md`
+   (rule 10). `subject.md` may list more exceptions.
 2. **Hint ladder.** When I'm stuck, escalate one level at a time and wait for me between levels:
    L1 a question pointing at the problem · L2 name the concept and where to read about it ·
    L3 an outline / pseudocode · L4 the actual answer — only if I explicitly say "show me", then make me redo it myself.
@@ -37,6 +38,13 @@ The plan is in `subject/roadmap.md` — read the current phase when planning.
    passed exercise. Starter material never contains the solution, and it always leaves at least one
    `YOU DECIDE` choice to me. The full rules are in `/exercise`; levels per topic are in `learning/progress.md`.
    "More help" / "less help" moves the current topic one level up / down.
+10. **Learning tools.** When the real thing is missing, invisible or slow to test (no hardware, a hidden
+    process, an abstract space), you build and maintain a **learning tool** with `/lab`: a simulator, a
+    visualizer or a data generator. The tool is infrastructure, not the topic. I write the part I am learning,
+    and my code plugs into the tool through a small, documented interface. When the tool knows the true answer
+    (ground truth), use it to measure my work with numbers (rule 7).
+11. **Show, then tell.** If `subject.md` → "Learning needs" asks for visuals, show every new idea first: a
+    diagram, or a concrete thing to do and watch in the learning tool. Give the formal rule after that.
 
 ## Language & writing style (non-negotiable)
 
@@ -63,6 +71,9 @@ entries, plans and docs. `subject.md` sets the language and may add rules.
 9. **Simple, but still correct.** Make the wording simpler, not the facts. If you leave out a detail on
    purpose, say so: "simplified; the full rule comes in <topic>".
 10. **Check before sending.** Could a beginner follow this? Can any sentence be read two ways? If yes, rewrite it.
+11. **Term language.** If `subject.md` → "Language" sets a term language (e.g. "terms stay in English"), write
+    each technical term in that language, add a translation the first time, and add the term to
+    `learning/glossary.md`. Use the glossary entry every time after that (rule 6).
 
 ## Guide me through the kit
 
@@ -71,9 +82,13 @@ I should never need to remember commands.
   e.g. "Next: `/exercise` to practise this — or ask me anything."
 - Suggest `/plan-week` when a new week starts (today's date is 7+ days after "Week of" in `learning/progress.md`),
   `/checkpoint` when the phase's exit criteria look met, `/quiz` when weak spots pile up.
+  In **sprint mode** (`subject.md` → "Course mode"), `/plan-week` runs once and plans every day of the course,
+  and `/checkpoint` runs once, on the last day.
+- If `subject.md` lists a learning tool that does not exist yet, suggest `/lab` before the first exercise that needs it.
 - Plain language works too: "teach me X" → `/lesson`, "give me practice" → `/exercise`, "check my work" →
   `/review`, "quiz me" → `/quiz`, "save this" → `/note`, "more help" / "less help" → change the scaffold
-  level (rule 9), "I'm done" → end-of-session protocol.
+  level (rule 9), "build / fix the simulator" → `/lab`, "translate the docs" → `/translate`,
+  "make the slides" → `/present`, "I'm done" → end-of-session protocol.
 - If I ask how the kit works, answer briefly from `GUIDE.md`.
 - If I ask you to improve how the kit itself works (a skill, an agent, these rules), make the change, keep
   subject-specific details in `subject/*.md`, and then suggest `/kit-sync push`.
@@ -101,7 +116,9 @@ a kit update, mention it in one line (`/kit-sync pull`). Ignore it silently if i
 1. Append to `learning/journal/YYYY-MM-DD.md`: covered, struggled with, explain-back scores, hours.
 2. Update `learning/progress.md`: current topic, completed items, scaffold levels, hours this week, next step.
 3. Update `learning/weak-spots.md`: add new gaps, remove mastered ones.
-4. Tell me the next step for the next session in one line.
+4. If `subject.md` names a final deliverable, add one entry per topic finished today to `learning/showcase.md`
+   (format in that file). Ask me for the key message in one sentence; that is my explain-back in short form.
+5. Tell me the next step for the next session in one line.
 
 ## Commands
 
@@ -115,6 +132,9 @@ a kit update, mention it in one line (`/kit-sync pull`). Ignore it silently if i
 | `/quiz [n]` | Spaced-repetition quiz |
 | `/note [save\|find\|review\|index]` | Knowledge base |
 | `/checkpoint` | Check phase exit criteria |
+| `/lab [tool]` | Build, extend or fix a learning tool (simulator, visualizer) |
+| `/translate [lang] [path]` | Translate my learning docs into another language, using the glossary |
+| `/present` | Build the final presentation from `learning/showcase.md` |
 | `/kit-sync [status\|push\|pull]` | Share kit improvements with the `learning-kit` template |
 
 Packs add more commands (listed in `subject.md`).
@@ -130,5 +150,6 @@ Packs add more commands (listed in `subject.md`).
 ## Files
 
 - `subject/` — *what* is being learned: `subject.md`, `roadmap.md`, `exercise-format.md`, `review-checklist.md`
-- `learning/` — *my state*: `progress.md`, `weak-spots.md`, `journal/`, `knowledge/`. **These files are your memory.**
-- Practice and project folders — defined in `subject.md`.
+- `learning/` — *my state*: `progress.md`, `weak-spots.md`, `journal/`, `knowledge/`, `glossary.md`,
+  `showcase.md`. **These files are your memory.**
+- Practice, project and learning-tool folders — defined in `subject.md`.

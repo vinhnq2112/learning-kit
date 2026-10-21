@@ -16,3 +16,11 @@ description: Plan the learner's coming week into concrete sessions from subject/
    Hands-on share grows as a phase advances. Include due items from any pack tracks (e.g. design lessons).
 4. Save it under "This week" in `learning/progress.md` (replace the previous plan), set "Week of" to this
    week's Monday, and reset "Hours this week". Create these fields if they are missing.
+
+## Sprint mode
+If `subject.md` → "Course mode" is **sprint**, plan the **whole course** once, one row per day from
+`subject/roadmap.md` (Day 1, Day 2, …). For a 1-hour day: ~5 min warm-up · ~20 min lesson · ~30 min exercise
+or tool work · ~5 min wrap-up with a showcase entry. Put any learning-tool build (`/lab`) before Day 1's
+exercise, and the final deliverable (`/present`) plus `/checkpoint` on the last day. Save it under
+"This week" as "Course plan". If the learner falls behind, re-plan the remaining days honestly (merge or cut
+topics — say which) instead of squeezing more into one hour.

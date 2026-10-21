@@ -5,6 +5,22 @@ Format: [Keep a Changelog](https://keepachangelog.com/) · versions: [SemVer](ht
 
 ## Unreleased
 
+## 0.2.0 — 2026-10-21
+
+### Added
+- **Learning tools** (`CLAUDE.md` rule 10, new `/lab`): the mentor builds and maintains simulators /
+  visualizers when the real thing is missing or invisible. The learner's code plugs in through a small
+  documented interface; the tool's ground truth measures the work. New "Learning tools" section in `subject.md`.
+- **Show, then tell** (rule 11): with "Learning needs" in `subject.md`, lessons show each idea first (diagram or
+  a step in the learning tool). `/lesson` also catches missing prerequisites with a short foundations chunk.
+- **Sprint mode** for short courses (≤ 2 weeks / ~15 h): one phase per day, `/plan-week` plans the whole course,
+  one `/checkpoint` at the end with S2 evidence. `/new-subject` proposes it.
+- **Term language + glossary** (writing rule 11, `learning/glossary.md`) and new `/translate` into
+  `translations/<lang>/`, keeping originals.
+- **Final deliverable**: `learning/showcase.md` collects the learner's key message per topic at session end;
+  new `/present` builds an editable PowerPoint deck from it (`build-pptx.mjs`, Node.js + pptxgenjs), checks
+  each slide as an image, and rehearses the talk.
+
 ## 0.1.0 — 2026-10-16
 
 ### Added

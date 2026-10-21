@@ -58,6 +58,23 @@ nothing is lost, and a fresh session stays fast and focused.
 
 Start of each week: `/plan-week`. End of each phase: `/checkpoint`.
 
+### Short course (sprint mode)
+For a course of up to 2 weeks or ~15 hours (e.g. 1 hour a day for 7 days), `/new-subject` proposes **sprint
+mode**: one phase per day, `/plan-week` plans every day at once, and `/checkpoint` runs only on the last day.
+A 1-hour day: warm-up 5' → `/lesson` 20' → `/exercise` 30' → "done" 5' (with a showcase entry).
+
+### Learning tools, visuals, two languages, final slides
+- **Learning tools (`/lab`):** if you can't see or try the real thing (no hardware, 3D movement, a hidden
+  process), the mentor builds a simulator or visualizer for you. You write only the part you are learning,
+  behind a small plug-in interface; the tool measures your result with real numbers.
+- **Visuals first:** set "Learning needs" in `subject.md` (e.g. "weak at spatial thinking") and every new
+  idea is shown first — a diagram or something to watch in the learning tool — then explained.
+- **Two languages:** learn in your language while technical terms stay in the field's language. Terms go into
+  `learning/glossary.md`; later `/translate en` converts your notes into `translations/en/`.
+- **Final slides (`/present`):** after each topic you give one key message (saved in `learning/showcase.md`).
+  At the end, `/present` turns them into an editable PowerPoint file (needs Node.js), checks every slide, and
+  rehearses the talk with you.
+
 ### How much help exercises give (scaffold levels)
 Exercises come with starter material that gets smaller as you improve. The goal is that you can work from a
 blank page at the end.
@@ -88,6 +105,9 @@ blank page at the end.
 | `/quiz [n]` | Refresh what you might forget |
 | `/note` · `/note find X` · `/note review X` | Save / search / revisit your notes |
 | `/checkpoint` | "Am I ready for the next phase?" |
+| `/lab [tool]` | Build, extend or fix your simulator / visualizer |
+| `/translate [lang] [path]` | Translate your notes and docs (originals stay) |
+| `/present` | Build your final PowerPoint from the showcase |
 | `/kit-sync [push\|pull]` | Share kit improvements between this subject and the template (section 8) |
 
 **software-project pack** (for subjects where you build software): `/design-lesson`, `/design-doc`, `/trace`
@@ -105,6 +125,11 @@ and the `architect` agent — learn to write requirements, architecture, module 
 | `learning/weak-spots.md` | Topics to revisit | mentor updates it |
 | `learning/journal/` | One entry per session day | mentor writes it |
 | `learning/knowledge/` | **Your notes**: Q&A, summaries, pitfalls, know-how, by topic | ✅ both of you |
+| `learning/glossary.md` | Technical terms with translations | ✅ both of you |
+| `learning/showcase.md` | Key messages + visuals for the final deliverable | ✅ both of you |
+| `tools/` | Learning tools (simulators, visualizers) | mentor maintains it (`/lab`) |
+| `presentation/` | `slides.md` source + the built `.pptx` | ✅ edit `slides.md`, then rebuild |
+| `translations/` | Translated copies of your docs | `/translate` writes it |
 
 The knowledge base is plain Markdown — readable in VS Code, Obsidian or GitHub.
 

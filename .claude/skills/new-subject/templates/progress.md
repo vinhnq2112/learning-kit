@@ -1,7 +1,8 @@
 # Progress
 
 - **Started:** <date>
-- **Current phase:** Phase 0 — <name>
+- **Course mode:** <standard | sprint>
+- **Current phase:** Phase 0 — <name> (sprint: Day 1 — <name>)
 - **Current topic:** not started
 - **Next step:** run `/plan-week`, then `/lesson`
 - **Week of:** <date of the Monday of the current week>

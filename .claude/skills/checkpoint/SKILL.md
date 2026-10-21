@@ -15,3 +15,9 @@ description: Verify the current phase's exit criteria from subject/roadmap.md wi
    (went well / improve / roadmap change).
    **Not met** → concrete remediation plan (specific lessons/exercises, estimated hours).
 5. If actual pace is far from the estimates, propose an honest roadmap adjustment and apply it if the learner agrees.
+
+## Sprint mode
+In sprint mode (`subject.md` → "Course mode"), there is one checkpoint, on the last day, over the whole course.
+The S1/S0 evidence rule is replaced by: at least one exercise done at **S2 or lower**, unless `subject.md`
+says otherwise. If a final deliverable exists, check it too: the file builds and every slide's key message
+came from the learner (`learning/showcase.md`). End with an honest list of what to learn next.
